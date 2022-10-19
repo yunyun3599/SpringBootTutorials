@@ -12,7 +12,8 @@ public class ServerController {
     public ServerController(KitchenService kitchen){
         this.kitchen = kitchen;
     }
-     @GetMapping(value="/server", produces=MediaType.TEXT_EVENT_STREAM_VALUE)
+
+    @GetMapping(value="/server", produces=MediaType.TEXT_EVENT_STREAM_VALUE)
     Flux<Dish> serveDishes(){
         return this.kitchen.getDishes();
      }
