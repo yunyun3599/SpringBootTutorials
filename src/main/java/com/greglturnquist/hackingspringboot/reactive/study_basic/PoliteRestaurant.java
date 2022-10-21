@@ -1,4 +1,4 @@
-package com.greglturnquist.hackingspringboot.reactive.study;
+package com.greglturnquist.hackingspringboot.reactive.study_basic;
 
 public class PoliteRestaurant {
 
