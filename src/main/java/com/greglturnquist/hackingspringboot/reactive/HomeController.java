@@ -33,7 +33,8 @@ public class HomeController {
         );
     }
 
-    @PostMapping("/add/{id}")
+    @Deprecated
+    @PostMapping("/deprecated/add/{id}")
     Mono<String> addToCart(@PathVariable String id) {
         return this.cartRepository.findById("My Cart")
                 .defaultIfEmpty(new Cart("My Cart"))
