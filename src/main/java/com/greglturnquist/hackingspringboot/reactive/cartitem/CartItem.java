@@ -9,9 +9,20 @@ public class CartItem {
 
     private CartItem() {}
 
-    CartItem(Item item) {
+    public CartItem(Item item) {
         this.item = item;
         this.quantity = 1;
     }
-    // 게터, 세터와 equals() 및 hashcode() 메소드는 편의상 생략
+
+    public Item getItem() {
+        return item;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void increment() {
+        quantity++;
+    }
 }

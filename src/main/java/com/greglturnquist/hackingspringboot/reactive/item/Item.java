@@ -13,5 +13,16 @@ public class Item {
         this.name = name;
         this.price = price;
     }
-    // getter, setter, equals() 및 hashcode() 메소드는 편의상 생략
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 }
