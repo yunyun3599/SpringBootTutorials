@@ -1,4 +1,4 @@
-package com.greglturnquist.hackingspringboot.reactive.Cart;
+package com.greglturnquist.hackingspringboot.reactive.cart;
 
 import com.greglturnquist.hackingspringboot.reactive.cartitem.CartItem;
 import org.springframework.data.annotation.Id;

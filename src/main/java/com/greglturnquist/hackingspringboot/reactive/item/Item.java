@@ -1,4 +1,4 @@
-package com.greglturnquist.hackingspringboot.reactive.Item;
+package com.greglturnquist.hackingspringboot.reactive.item;
 
 import org.springframework.data.annotation.Id;
 
@@ -9,7 +9,7 @@ public class Item {
 
     private Item() {}
 
-    Item(String name, double price) {
+    public Item(String name, double price) {
         this.name = name;
         this.price = price;
     }
