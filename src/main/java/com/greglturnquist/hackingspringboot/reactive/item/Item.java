@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 
 import java.awt.*;
 import java.util.Date;
+import java.util.Objects;
 
 public class Item {
     private @Id String id;
@@ -47,6 +48,13 @@ public class Item {
         return active;
     }
 
+    public Item(String id, String name, String description, double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
     public Item(String name, String description, double price) {
         this.name = name;
         this.description = description;
@@ -63,5 +71,25 @@ public class Item {
 
     public double getPrice() {
         return price;
+    }
+
+    public String toString() {
+        return "Item{id='"+getId()+"', name='"+getName()+"', description='"+getDescription()+"', price="+getPrice()+"}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Item item = (Item)o;
+        if(getId() != item.getId()) return false;
+        if(getName() != item.getName()) return false;
+        if(getDescription() != item.getDescription()) return false;
+        if(getPrice() != item.getPrice()) return false;
+        return true;
+    }
+
+    // hashcode 재정의
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price);
     }
 }

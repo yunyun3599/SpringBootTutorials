@@ -23,3 +23,6 @@
 ### 3장. 스프링 부트 개발자 도구
 1. [개발자 도구](https://www.notion.so/1-71826e30b9e845a3a3c363832484bfa9)
 2. [리액터 개발자 도구](https://www.notion.so/2-bb0edb0e18d14fd09b205b199fafe731)
+
+### 4장. 스프링 부트 테스트
+1. [리액티브 단위 테스트 작성](https://www.notion.so/1-d30024a263c949789968ef545fe1b997)
