@@ -2,6 +2,7 @@ package com.greglturnquist.hackingspringboot.reactive;
 
 import com.greglturnquist.hackingspringboot.reactive.cart.Cart;
 import com.greglturnquist.hackingspringboot.reactive.cart.CartRepository;
+import com.greglturnquist.hackingspringboot.reactive.cart.CartService;
 import com.greglturnquist.hackingspringboot.reactive.cartitem.CartItem;
 import com.greglturnquist.hackingspringboot.reactive.item.ItemRepository;
 import org.springframework.stereotype.Controller;
@@ -16,18 +17,20 @@ public class HomeController {
 
     private ItemRepository itemRepository;
     private CartRepository cartRepository;
+    private CartService cartService;
 
-    public HomeController(ItemRepository itemRepository, CartRepository cartRepository) {
+    public HomeController(ItemRepository itemRepository, CartRepository cartRepository, CartService cartService) {
         this.itemRepository = itemRepository;
         this.cartRepository = cartRepository;
+        this.cartService = cartService;
     }
 
     @GetMapping
     Mono<Rendering> home() {
         return Mono.just(
                 Rendering.view("home.html")
-                        .modelAttribute("items", this.itemRepository.findAll().doOnNext(System.out::println))
-                        .modelAttribute("cart", this.cartRepository.findById("My Cart")
+                        .modelAttribute("items", this.cartService.getInventory().doOnNext(System.out::println))
+                        .modelAttribute("cart", this.cartService.getCart("My Cart")
                                 .defaultIfEmpty(new Cart("My Cart")))
                         .build()
         );

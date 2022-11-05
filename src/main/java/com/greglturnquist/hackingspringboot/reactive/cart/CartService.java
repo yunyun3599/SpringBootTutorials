@@ -1,8 +1,10 @@
 package com.greglturnquist.hackingspringboot.reactive.cart;
 
 import com.greglturnquist.hackingspringboot.reactive.cartitem.CartItem;
+import com.greglturnquist.hackingspringboot.reactive.item.Item;
 import com.greglturnquist.hackingspringboot.reactive.item.ItemRepository;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -41,5 +43,13 @@ public class CartService {
                 .log("cartWithAnotherItem")
                 .flatMap(this.cartRepository::save)
                 .log("savedCart");
+    }
+
+    public Flux<Item> getInventory() {
+        return this.itemRepository.findAll();
+    }
+
+    public Mono<Cart> getCart(String id) {
+        return this.cartRepository.findById(id);
     }
 }

@@ -26,3 +26,5 @@
 
 ### 4장. 스프링 부트 테스트
 1. [리액티브 단위 테스트 작성](https://www.notion.so/1-d30024a263c949789968ef545fe1b997)
+2. [내장 컨테이너 테스트 실행](https://www.notion.so/2-3973d39f3b244ffbb3b7b03a4008c07a)
+3. [스프링 부트 슬라이스 테스트](https://www.notion.so/3-6ec5695b26904286b4d0fd24dcf04c61)
