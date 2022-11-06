@@ -59,12 +59,12 @@
 			<artifactId>blockhound</artifactId>
 			<version>1.0.3.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>io.projectreactor.tools</groupId>
-			<artifactId>blockhound-junit-platform</artifactId>
-			<version>1.0.3.RELEASE</version>
-			<scope>test</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.projectreactor.tools</groupId>-->
+<!--			<artifactId>blockhound-junit-platform</artifactId>-->
+<!--			<version>1.0.3.RELEASE</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>
@@ -72,6 +72,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.4.7</version>
+				<configuration>
+					<layers>
+						<enabled>true</enabled>
+					</layers>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

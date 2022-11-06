@@ -50,15 +50,15 @@ public class BlockHoundIntegrationTest {
          cartService = new BlockedCartService(itemRepository, cartRepository);
     }
 
-    @Test
-    void blockHoundShouldTrapBlockingCall() {
-        Mono.delay(Duration.ofSeconds(1))
-                .flatMap(tick -> cartService.addToCart("My Cart", "item1"))
-                .as(StepVerifier::create)
-                .verifyErrorSatisfies(throwable -> {
-                    assertThat(throwable).hasMessageContaining(
-                            "block()/blockFirst()/blockLast() are blocking"
-                    );
-                });
-    }
+//    @Test
+//    void blockHoundShouldTrapBlockingCall() {
+//        Mono.delay(Duration.ofSeconds(1))
+//                .flatMap(tick -> cartService.addToCart("My Cart", "item1"))
+//                .as(StepVerifier::create)
+//                .verifyErrorSatisfies(throwable -> {
+//                    assertThat(throwable).hasMessageContaining(
+//                            "block()/blockFirst()/blockLast() are blocking"
+//                    );
+//                });
+//    }
 }
