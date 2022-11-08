@@ -32,3 +32,4 @@
 
 ### 5장. 스프링 부트 운영
 1. [애플리케이션 배포](https://www.notion.so/1-cd389d0f698a47d6ae84f47d022f83a2)
+2. [운영 애플리케이션 관리](https://www.notion.so/154cc3352aa041afb7c308f12eabc4d6)

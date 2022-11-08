@@ -59,6 +59,10 @@
 			<artifactId>blockhound</artifactId>
 			<version>1.0.3.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>io.projectreactor.tools</groupId>-->
 <!--			<artifactId>blockhound-junit-platform</artifactId>-->
@@ -78,6 +82,10 @@
 						<enabled>true</enabled>
 					</layers>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
